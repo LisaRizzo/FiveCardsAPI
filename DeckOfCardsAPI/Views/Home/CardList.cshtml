@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DeckOfCardsAPI.Models.Card>
+
+@{
+    ViewBag.Title = "CardList";
+}
+
+<h2>Your Hand: </h2>
+
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.ImageURL)" />
+                
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value) of @Html.DisplayFor(modelItem => item.Suit)
+            </td>
+        </tr>
+    }
+
+</table>
